@@ -1,0 +1,502 @@
+﻿* {
+    box-sizing: border-box;
+}
+
+html, body {
+    margin: 0px;
+    padding: 0px;
+    background-color: whitesmoke;
+    height: 100%;
+}
+
+
+
+.auth-content {
+    width: 30%;
+    margin: 100px auto;
+    padding-bottom: 20px;
+    min-height: 700px;
+}
+
+.form-title {
+    margin-bottom: 50px;
+    text-align: center;
+}
+
+.post-slider {
+    /*background-color:green;*/
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'candal', serif;
+    color: darkslategray;
+}
+
+
+.page-wrapper {
+    margin-left: 7%;
+    margin-right: 7%;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.page-wrapper a:hover {
+    color: blue;
+    text-decoration: none;
+}
+
+.slider-title {
+    text-align: center;
+    font-family: candal, serif;
+    margin: 20px auto;
+}
+
+.post-slider .post-wrapper {
+    overflow: hidden;
+    padding: 10px 0 10px 0;
+    height: 350px;
+}
+
+
+    .post-slider .post-wrapper .post {
+        width: 300px;
+        height: 340px;
+        display: inline-block;
+        background-color: white;
+        margin: 0px 10px;
+        border-radius: 5px;
+        /*border: 1px solid blue;*/
+        text-align: left;
+        overflow: hidden;
+        box-shadow: 1rem 1rem 1rem -1rem gray;
+    }
+
+        .post-slider .post-wrapper .post .post-info {
+            padding-left: 5px;
+        }
+
+
+        .post-slider .post-wrapper .post .slider-image {
+            width: 100%;
+            height: 250px;
+        }
+
+/*NEXT PREV BUTTON */
+.prev {
+    position: absolute;
+    top: 45%;
+    left: 30px;
+    cursor: pointer;
+}
+
+.next {
+    position: absolute;
+    top: 45%;
+    right: 30px;
+    cursor: pointer;
+}
+
+
+/*CONTENT*/
+
+.content {
+    margin: 7%;
+}
+
+
+    .content .main-content {
+        width: 70%;
+        float: left;
+    }
+
+    .content .sidebar {
+        width: 30%;
+        float: left;
+    }
+
+
+
+    .content .main-content .recent-post-title {
+        margin-bottom: 40px;
+        margin-left: 10px;
+        text-align: left;
+    }
+
+    .content .main-content .post-image {
+        width: 40%;
+        height: 250px;
+        float: left;
+        margin: 10px;
+    }
+
+
+    .content .main-content .post {
+        width: 95%;
+        overflow: hidden;
+        background-color: white;
+        position: relative;
+        border-radius: 5px;
+        padding-right: 10px;
+        margin-bottom: 20px;
+    }
+
+        .content .main-content .post p {
+            font-family: 'lora', serif;
+            font-size: 1.1em;
+        }
+
+        .content .main-content .post .read-more {
+            position: absolute;
+            bottom: 10px;
+            right: 10PX;
+            border-radius: 0px;
+        }
+
+        .content .main-content .post .post-title {
+            padding: 10px;
+        }
+
+
+.clearfix::after {
+    content: '';
+    display: block;
+    clear: both;
+}
+
+/*CONTENT SIDEBAR*/
+
+.content .sidebar .section {
+    background: white;
+    padding: 20px;
+    border-radius: 5px;
+    margin-bottom: 20px;
+}
+
+.contnet .sidebar .section.search {
+}
+
+
+.content .sidebar .section.topics ul {
+    margin: 0px;
+    padding: 0px;
+    list-style: none;
+    border-top: 1px solid gray;
+}
+
+    .content .sidebar .section.topics ul li a:hover {
+        padding-left: 20px;
+        transition: all 0.3s;
+        color: forestgreen;
+    }
+
+    .content .sidebar .section.topics ul li a {
+        border-bottom: 1px solid gray;
+        width: 100%;
+        display: block;
+        padding: 15px 0px;
+        font-family: 'Lora',serif;
+        font-size: 1.2em;
+        text-decoration: none;
+        transition: all 0.5s;
+    }
+
+/* END OF CONTENT*/
+
+.text-input {
+    padding: .7rem;
+    display: block;
+    width: 100%;
+    border-radius: 5px;
+    outline: none;
+    color: gray;
+    line-height: 1.5rem;
+    font-size: 1.4em;
+    font-family: 'Lora', serif;
+    border: 1px solid gray;
+}
+
+.text-input-create-post{
+   padding:.5rem;
+}
+
+#contact-id {
+    /*background:red;*/
+}
+
+.navbar-brand {
+    color: deepskyblue !important;
+    font-size: 1.4em;
+}
+
+.navbar .navbar-brand span {
+    background-color: white;
+    padding: 2px 5px;
+    border-radius: 5px;
+    border: 1px solid deepskyblue;
+}
+
+.navbar li a {
+    color: white !important;
+    font-size: 1.2em;
+    
+}
+
+    .navbar li a:hover {
+        color: deepskyblue !important;
+        
+    }
+
+.navbar li:hover {
+  
+    background-color: white;
+}
+
+
+.page-wrapper-about {
+    min-height: 500px;
+    margin: 50px;
+}
+
+.page-wrapper-contact {
+    min-height: 500px;
+    margin: 50px;
+}
+/*FOOTER*/
+.footer {
+    background-color: black;
+    height: 400px;
+    color: whitesmoke;
+    position: relative;
+}
+
+    .footer .footer-content {
+        height: 350px;
+        display: flex;
+    }
+
+        .footer .footer-content .footer-section {
+            flex: 1;
+            padding: 25px;
+        }
+
+
+    .footer .footer-bottom {
+        height: 50px;
+        width: 100%;
+        text-align: center;
+        padding-top: 15px;
+        background-color: slategray;
+        position: absolute;
+        bottom: 0px;
+        left: 0px;
+    }
+
+
+    .footer h3 {
+        color: white;
+    }
+
+.footer-section .contact span {
+    display: block;
+    font-size: 1.2em;
+}
+
+.footer-section .socials a {
+    display: inline-block;
+    font-size: 1.1em;
+    margin-right: 5px;
+    border: 1px solid gray;
+    padding: 5px;
+    border-radius: 5px;
+    margin-top: 8px;
+}
+
+.footer-section ul li {
+    font-size: 1.2em;
+    text-decoration: none;
+}
+
+
+.footer-section textarea {
+    margin-top: 10px;
+    min-height: 100px;
+}
+
+.footer-section button {
+    float: right;
+    font-size: 1.3em;
+    padding: 7px 30px;
+}
+
+.main-content.single-post {
+    background: white;
+    padding: 0 50px;
+}
+
+.sidebar.single {
+    padding: 0 10px;
+}
+
+.content .sidebar.home {
+    margin-top: 100px;
+}
+
+.page-wrapper.home {
+    margin-top: 80px;
+}
+
+.main-content.single-post .post-title {
+    text-align: center;
+}
+
+.sidebar.single .popular .post {
+    border-top: 1px solid gray;
+    margin-top: 10px;
+    padding-top: 10px;
+}
+
+    .sidebar.single .popular .post img {
+        width: 50px;
+        height: 50px;
+        float: left;
+        margin-right: 10px;
+    }
+
+.navbar #login-menu {
+    display: none;
+}
+
+.navbar .dropdown li a {
+    color: black !important;
+}
+
+    .navbar .dropdown li a:hover {
+        color: deepskyblue !important;
+    }
+
+.navbar .login-register {
+    display: none;
+}
+
+.admin-wrapper.control-panel {
+    display: flex;
+    height: 100%;
+    margin-top: 50px;
+    min-height: 600px;
+}
+
+.admin-wrapper .left-sidebar {
+    flex: 2;
+    background-color: black;
+}
+
+    .admin-wrapper .left-sidebar ul {
+        list-style: none;
+        margin: 0px;
+        padding: 0px;
+        font-size: 1.2em;
+        color: aliceblue;
+        margin-top: 10px;
+        border-top: 1px solid gray;
+    }
+
+        .admin-wrapper .left-sidebar ul a {
+            display: block;
+            padding: 10px;
+            border-bottom:1px solid gray;
+        }
+
+            .admin-wrapper .left-sidebar ul a:hover {
+                background: white;
+                color: black;
+                text-decoration: none;
+            }
+
+            .admin-wrapper .left-sidebar ul a:focus {
+                background:gray;
+                color: white;
+                text-decoration: none;
+            }
+
+
+.admin-wrapper .admin-content {
+    flex: 8;
+    height:100%;
+    padding:40px 100px 100px;
+
+}
+
+.admin-content .content h3{
+    text-align:center;
+    margin-bottom:40px;
+}
+
+.admin-content .content {
+    width:100%;
+}
+
+
+    .admin-content .content{
+        margin:0px;
+        padding:0px;
+    }
+
+
+    .admin-content .content table {
+        margin:0;
+    }
+
+
+        .admin-content .content table td {
+            padding: 12px;
+            text-align: left;
+            border-bottom: 1px solid gray;
+        }
+
+.admin-content table th {
+    background-color: gray;
+    color: white;
+    text-align: center;
+    padding: 12px;
+}
+
+.admin-content table  .edit{
+    color:dodgerblue;
+
+}
+
+
+.admin-content table .delete {
+    color: red;
+}
+.admin-content table .publish {
+    color: forestgreen;
+}
+
+
+/*==============RESTRICT MOBILE VIEW=====================*/
+@media only screen and (max-width: 980px) {
+    #desktop-view {
+        display: none;
+    }
+
+    #mobile-view{
+        
+        width:100%;
+        min-height:100%;
+        background-color:white;
+        text-align:center;
+        align-content:center;
+        color:deepskyblue;
+        font-size:1.5em;
+        background-color:lightyellow;
+    }
+
+}
+
+#welcome-user{
+    text-transform:capitalize;
+}

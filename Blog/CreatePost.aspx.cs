@@ -7,18 +7,11 @@ using System.Web.UI.WebControls;
 
 namespace Blog
 {
-    public partial class SiteMaster : MasterPage
+    public partial class CreatePost : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            
-        }
 
-        protected void Logout_Click(Object sender , EventArgs e)
-        {
-            
         }
-       
-
     }
 }
