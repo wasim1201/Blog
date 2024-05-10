@@ -11,11 +11,24 @@ namespace Blog
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            if (Session["username"] == null)
+            {
+                LoginRegister.Visible = true;
+                WelcomeUser.Visible = false;
+            }
+            else
+            {
+                LoginRegister.Visible = false;
+                WelcomeUser.Visible = true;
+            }
             
         }
 
         protected void Logout_Click(Object sender , EventArgs e)
         {
+            Session.Remove("username");
+            Response.Redirect("login.aspx");
+            
             
         }
        

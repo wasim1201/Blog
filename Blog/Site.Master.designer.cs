@@ -13,6 +13,24 @@ namespace Blog {
     public partial class SiteMaster {
         
         /// <summary>
+        /// WelcomeUser control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl WelcomeUser;
+        
+        /// <summary>
+        /// LoginRegister control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl LoginRegister;
+        
+        /// <summary>
         /// MainContent control.
         /// </summary>
         /// <remarks>

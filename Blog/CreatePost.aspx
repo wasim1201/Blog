@@ -68,6 +68,11 @@
                     <select name="topic" id="" class="text-input">
                         <option value="Maths">Maths</option>
                         <option value="Physics">Physics</option>
+                        <option value="Physics">Chemistry</option>
+                        <option value="Physics">History</option>
+                        <option value="Physics">Politics</option>
+                        <option value="Physics">Geography</option>
+                        <option value="Physics">Data sciecnce</option>
                     </select>
 
                 </div><br />

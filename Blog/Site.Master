@@ -6,7 +6,7 @@
 <head runat="server">
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title><%: Page.Title %> - IAS Inspires</title>
+    <title><%: Page.Title %> - IAS Resources</title>
 
     <asp:PlaceHolder runat="server">
         <%: Scripts.Render("~/bundles/modernizr") %>
@@ -19,9 +19,9 @@
 
 
     <%-- GOOGLE FOTNS LINK --%>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <%--  <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&display=swap" rel="stylesheet">--%>
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -59,7 +59,7 @@
                 </Scripts>
             </asp:ScriptManager>
 
-            <div class="navbar navbar-inverse">
+            <div class="navbar navbar-inverse navbar-fixed-top">
                 <div class="container">
                     <div class="navbar-header">
                         <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
@@ -79,23 +79,36 @@
 
                         <ul class="nav navbar-nav navbar-right">
 
-                           
 
-                             <li class="dropdown" id="hello-user">
-                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Welcome  <%=HttpContext.Current.Session["username"]%><span class="caret"></span></a>
+                             
+                            <li class="dropdown" id="WelcomeUser" runat="server">
+                              
+                                <a id="logged-user" href="#" class="dropdown-toggle" data-toggle="dropdown" role="button"
+                                    aria-haspopup="true" aria-expanded="false">Welcome  <%=HttpContext.Current.Session["username"]%><span class="caret"></span></a>
+                                
                                 <ul class="dropdown-menu">
                                     <li><a href="ControlPanel">Dashboard</a></li>
                                     <%--<li role="separator" class="divider"></li>--%>
-                                    <li><asp:LinkButton runat="server" OnClick="Logout_Click">Logout</asp:LinkButton></li>
+                                    <li>
+                                        <asp:LinkButton runat="server" OnClick="Logout_Click">Logout</asp:LinkButton></li>
                                 </ul>
+                              
                             </li>
-                           } 
+                            
 
-                            <ul class="nav navbar-nav navbar-right login-register">
+
+                            
+
+                            <ul id="LoginRegister" runat="server" class="nav navbar-nav navbar-right login-register">
                                 <li><a runat="server" href="~/Login">Login</a></li>
                                 <li><a runat="server" href="~/Signup">Signup</a></li>
 
                             </ul>
+
+                          
+
+
+
 
                         </ul>
 
@@ -194,7 +207,7 @@
     </div>
 
     <div id="mobile-view">
-     Please open in Desktop or Laptop
+        Please open in Desktop or Laptop
     </div>
 
 

@@ -35,7 +35,7 @@ namespace Blog
                 con.Open();
 
                 cmd.ExecuteNonQuery();
-
+                Session["username"]=txtUsername.Text;
                 Response.Redirect("Default.aspx");
 
             }

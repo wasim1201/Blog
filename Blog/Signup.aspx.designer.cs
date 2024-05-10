@@ -22,6 +22,15 @@ namespace Blog {
         protected global::System.Web.UI.WebControls.TextBox txtUsername;
         
         /// <summary>
+        /// usernameRequired control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator usernameRequired;
+        
+        /// <summary>
         /// txtName control.
         /// </summary>
         /// <remarks>
@@ -29,6 +38,15 @@ namespace Blog {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtName;
+        
+        /// <summary>
+        /// fullNameRequired control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator fullNameRequired;
         
         /// <summary>
         /// txtEmail control.
@@ -40,6 +58,24 @@ namespace Blog {
         protected global::System.Web.UI.WebControls.TextBox txtEmail;
         
         /// <summary>
+        /// emailRequired control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator emailRequired;
+        
+        /// <summary>
+        /// regexEmailValid control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RegularExpressionValidator regexEmailValid;
+        
+        /// <summary>
         /// txtPassword control.
         /// </summary>
         /// <remarks>
@@ -49,6 +85,15 @@ namespace Blog {
         protected global::System.Web.UI.WebControls.TextBox txtPassword;
         
         /// <summary>
+        /// choosePassword control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator choosePassword;
+        
+        /// <summary>
         /// txtConfirmPassword control.
         /// </summary>
         /// <remarks>
@@ -56,6 +101,24 @@ namespace Blog {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtConfirmPassword;
+        
+        /// <summary>
+        /// confirmPassword control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator confirmPassword;
+        
+        /// <summary>
+        /// matchPassword control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CompareValidator matchPassword;
         
         /// <summary>
         /// txtLabel control.
