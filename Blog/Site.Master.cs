@@ -21,17 +21,18 @@ namespace Blog
                 LoginRegister.Visible = false;
                 WelcomeUser.Visible = true;
             }
-            
+
         }
 
-        protected void Logout_Click(Object sender , EventArgs e)
+        protected void Logout_Click(Object sender, EventArgs e)
         {
             Session.Remove("username");
             Response.Redirect("login.aspx");
-            
-            
+
+
+
         }
-       
+        //Todo
 
     }
 }
