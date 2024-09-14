@@ -1,15 +1,13 @@
-﻿<%@ Page Title="Admin Section- Manage Post" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="ControlPanel.aspx.cs" Inherits="Blog.ControlPanel" %>
+﻿<%@ Page Title="Post Page" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="ManageTopics.aspx.cs" Inherits="Blog.ManageTopics" %>
 
-<asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
+<asp:Content ID="DefaultContent" ContentPlaceHolderID="MainContent" runat="server">
+
+    <link rel="stylesheet" type="text/css" href="Site.css" />
 
 
-    <%-- Remove footer from control panel --%>
-    <style type="text/css">
-        .footer {
-            display: none;
-        }
-    </style>
+    <div class="page-wrapper-topics">
 
+        
     <%-- Admin Page Wrapper--%>
     <div class="admin-wrapper control-panel ">
 
@@ -21,7 +19,7 @@
             <ul>
                 <li><a href="ControlPanel">Manage Posts</a></li>
                 <li><a href="ManageUsers">Manage Users</a></li>
-                <li><a href="ManageTopics">Manage Topics</a></li>
+                <li><a href="ManageTopics.aspx">Manage Topics</a></li>
             </ul>
 
         </div>
@@ -32,30 +30,28 @@
         <div class="admin-content">
 
             <div class="button-group">
-                <a href="CreatePost.aspx" class="btn btn-primary">Add Post</a>
-                <%--<a href="ControlPanel.aspx" class="btn btn-primary">Manage Post</a>--%>
+                <a href="AddTopics.aspx" class="btn btn-primary">Add Topic</a>
+                <%--<a href="Topics.aspx" class="btn btn-primary">Manage Topics</a>--%>
             </div>
 
             <div class="content">
 
-                <h3 class="page-title">Manage Posts</h3>
+                <h3 class="page-title">Manage Topics</h3>
 
                 <table>
 
                     <thead>
                         <th>S No</th>
                         <th>Title</th>
-                        <th>Author</th>
                         <th colspan="3">Action</th>
                     </thead>
 
                     <tbody>
 
-                        <asp:DataList runat="server" ID="ManagePostDataList">
+                         <asp:DataList runat="server" id="topicDataList">
                             <ItemTemplate>
                                 <tr>
                                     <td><asp:Label ID="lblRowNumber" Text='<%# Container.ItemIndex + 1 %>' runat="server" /></td>
-                                    <td><%# Eval("Title") %></td>
                                     <td><%# Eval("Name") %></td>
                                     <td class="edit"><a href="#">Edit</a></td>
                                     <td class="delete"><a href="#">Delete</a></td>
@@ -64,8 +60,6 @@
                             </ItemTemplate>
 
                         </asp:DataList>
-
-
 
                     </tbody>
 
@@ -78,6 +72,6 @@
     </div>
 
 
+    </div>
 
-    <%-- // Admin Page Wrapper --%>
 </asp:Content>

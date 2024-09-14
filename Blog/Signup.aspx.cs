@@ -25,7 +25,7 @@ namespace Blog
             {
                 
                
-                SqlCommand cmd = new SqlCommand("insert into tblUser(Username, Name, Email, Password, CreatedDate) Values(@username, @name, @email, @password, @createdDate)", con);
+                SqlCommand cmd = new SqlCommand("insert into tblUser(Username, Name, Email, Password, CreatedDate) OUTPUT Inserted.Id Values(@username, @name, @email, @password, @createdDate) ", con);
                 cmd.Parameters.AddWithValue("@username", txtUsername.Text);
                 cmd.Parameters.AddWithValue("@name", txtName.Text);
                 cmd.Parameters.AddWithValue("@email", txtEmail.Text);
@@ -34,12 +34,17 @@ namespace Blog
 
                 con.Open();
 
-                cmd.ExecuteNonQuery();
+                //cmd.ExecuteNonQuery();
+                
                 Session["username"]=txtUsername.Text;
+                int Userid = (int)cmd.ExecuteScalar();
+                Session["UserId"] = Userid;
+
                 Response.Redirect("Default.aspx");
 
             }
 
         }
+
     }
 }

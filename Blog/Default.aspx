@@ -3,8 +3,11 @@
 <asp:Content ID="DefaultContent" ContentPlaceHolderID="MainContent" runat="server">
 
     <link rel="stylesheet" type="text/css" href="Site.css" />
+    <link rel="stylesheet" type="text/css" href="Site.css" />
 
-    
+ 
+
+
 
     <div class="page-wrapper home">
 
@@ -27,56 +30,22 @@
 
             <div class="post-wrapper">
 
-                <div class="post">
-                    <img src="images/img-book.jpg" class="slider-image" />
-                    <div class="post-info">
-                        <h4><a href="Login.aspx">One day your life will flash before your eyes</a></h4>
-                        Wasim Akhtar
-                        &nbsp;
-                        March 08, 2019
-                    </div>
-                </div>
+                <asp:DataList runat="server" ID="TrendsDataList" RepeatDirection="Horizontal" RepeatColumns="5">
+                    <ItemTemplate>
 
-                <div class="post">
-                    <img src="images/book-graphic.jpg" class="slider-image" />
-                    <div class="post-info">
-                        <h4><a href="Login.aspx">One day your life will flash before your eyes</a></h4>
-                        Wasim Akhtar
+                        <div class="post">
+                            <img class="slider-image" src='<%# "data:image/jpg;base64," + Convert.ToBase64String((byte[])Eval("ImageData")) %>' />
+                            <div class="post-info">
+                                <h4>
+                                    <asp:HyperLink runat="server" NavigateUrl='<%# "~/PostDetail.aspx?Id="+Eval("Id") +"&Title="+Eval("Title") %>'><%#Eval("Title") %> </asp:HyperLink></h4>
+                                <%# Eval("Name") %> 
                         &nbsp;
-                        March 08, 2019
-                    </div>
-                </div>
+                        <%# Eval("CreatedAt") %>
+                            </div>
+                        </div>
 
-                <div class="post">
-                    <img src="images/pexels-moises-besada-7785028.jpg" class="slider-image" />
-                    <div class="post-info">
-                        <h4><a href="Login.aspx">One day your life will flash before your eyes</a></h4>
-                        Wasim Akhtar
-                        &nbsp;
-                        March 08, 2019
-                    </div>
-                </div>
-
-                <div class="post">
-                    <img src="images/pexels-moises-besada-7785028.jpg" class="slider-image" />
-                    <div class="post-info">
-                        <h4><a href="Login.aspx">One day your life will flash before your eyes</a></h4>
-                        Wasim Akhtar
-                        &nbsp;
-                        March 08, 2019
-                    </div>
-                </div>
-
-
-                <div class="post">
-                    <img src="images/img-book.jpg" class="slider-image" />
-                    <div class="post-info">
-                        <h4><a href="Login.aspx">One day your life will flash before your eyes</a></h4>
-                        Wasim Akhtar
-                        &nbsp;
-                        March 08, 2019
-                    </div>
-                </div>
+                    </ItemTemplate>
+                </asp:DataList>
 
             </div>
 
@@ -92,216 +61,40 @@
 
         <%-- main content --%>
         <div class="main-content">
-            <h1 class="recent-post-title">Recent Posts</h1>
+            <h1 runat="server" id="RecentPost" class="recent-post-title">Recent Posts</h1>
+
+            <asp:DataList runat="server" ID="postDataList" CssClass="postDataList">
+                <ItemTemplate>
+                    <div class="post" runat="server">
+                        <div id="div-post-image">
+                            <img runat="server" id="image" class="post-image" src='<%# "data:image/jpg;base64," + Convert.ToBase64String((byte[])Eval("ImageData")) %>' />
+                        </div>
+
+                        <div class="post-preview">
+
+                            <h2 class="post-title">
+                                <asp:HyperLink NavigateUrl='<%# "~/PostDetail.aspx?Id="+Eval("Id")+"&Title="+ Eval("Title") %>' runat="server"><%#Eval("Title")%></asp:HyperLink></h2>
+                            <i class="fa-regular fa-user"></i>&nbsp;&nbsp <%#Eval("Name")%>
+                               &nbsp;
+                               &nbsp;
+
+                            <i class="fa-regular fa-calendar-days"></i>&nbsp;&nbsp;<%#Eval("CreatedAt")%>
+
+                            <br />
+                            <br />
+
+                            <p class="preview-test"><%#Eval("Body")%></p>
 
 
-            <div class="post">
-                <img class="post-image" src="Images/pexels-moises-besada-7785028.jpg">
-                <div class="post-preview">
 
-                    <h2 class="post-title"><a href="#">This is post preview</a></h2>
-                    <i class="fa-regular fa-user"></i>&nbsp;&nbsp;Awa Melvin
-                   &nbsp;
-                   &nbsp;
-
-                    <i class="fa-regular fa-calendar-days"></i>&nbsp;&nbsp;20-03-2024
-                 
-                  <br />
-                    <br />
-
-                    <p class="preview-test">Lorem ipsum dolor sit amet, lectus, voluptatum magni quisquam placeat adipisci doloremque voluptatem numquam nulla nesciunt tempore autem. Eligendi porro fugiat mollitia voluptatibus? Beatae ab quidem non assumenda reiciendis quisquam quaerat.</p>
-                    <a href="post.aspx" class="btn btn-default read-more ">Read More</a>
-                </div>
-
-            </div>
-
-            <div class="post">
-                <img class="post-image" src="Images/pexels-moises-besada-7785028.jpg">
-                <div class="post-preview">
-
-                    <h2 class="post-title"><a href="#">This is post preview</a></h2>
-                    <i class="fa-regular fa-user"></i>&nbsp;&nbsp;Awa Melvin
-                   &nbsp;
-                   &nbsp;
-
-                    <i class="fa-regular fa-calendar-days"></i>&nbsp;&nbsp;20-03-2024
-                 
-                  <br />
-                    <br />
-
-                    <p class="preview-test">Lorem ipsum dolor sit amet, lectus, voluptatum magni quisquam placeat adipisci doloremque voluptatem numquam nulla nesciunt tempore autem. Eligendi porro fugiat mollitia voluptatibus? Beatae ab quidem non assumenda reiciendis quisquam quaerat.</p>
-                    <a href="login.aspx" class="btn btn-default read-more ">Read More</a>
-                </div>
-
-            </div>
-
-            <div class="post">
-                <img class="post-image" src="Images/pexels-moises-besada-7785028.jpg">
-                <div class="post-preview">
-
-                    <h2 class="post-title"><a href="#">This is post preview</a></h2>
-                    <i class="fa-regular fa-user"></i>&nbsp;&nbsp;Awa Melvin
-                   &nbsp;
-                   &nbsp;
-
-                    <i class="fa-regular fa-calendar-days"></i>&nbsp;&nbsp;20-03-2024
-                 
-                  <br />
-                    <br />
-
-                    <p class="preview-test">Lorem ipsum dolor sit amet, lectus, voluptatum magni quisquam placeat adipisci doloremque voluptatem numquam nulla nesciunt tempore autem. Eligendi porro fugiat mollitia voluptatibus? Beatae ab quidem non assumenda reiciendis quisquam quaerat.</p>
-                    <a href="login.aspx" class="btn btn-default read-more ">Read More</a>
-                </div>
-
-            </div>
+                        </div>
 
 
-            <div class="post">
-                <img class="post-image" src="Images/pexels-moises-besada-7785028.jpg">
-                <div class="post-preview">
-
-                    <h2 class="post-title"><a href="#">This is post preview</a></h2>
-                    <i class="fa-regular fa-user"></i>&nbsp;&nbsp;Awa Melvin
-                   &nbsp;
-                   &nbsp;
-
-                    <i class="fa-regular fa-calendar-days"></i>&nbsp;&nbsp;20-03-2024
-                 
-                  <br />
-                    <br />
-
-                    <p class="preview-test">Lorem ipsum dolor sit amet, lectus, voluptatum magni quisquam placeat adipisci doloremque voluptatem numquam nulla nesciunt tempore autem. Eligendi porro fugiat mollitia voluptatibus? Beatae ab quidem non assumenda reiciendis quisquam quaerat.</p>
-                    <a href="login.aspx" class="btn btn-default read-more ">Read More</a>
-                </div>
-
-            </div>
+                    </div>
 
 
-            <div class="post">
-                <img class="post-image" src="Images/pexels-moises-besada-7785028.jpg">
-                <div class="post-preview">
-
-                    <h2 class="post-title"><a href="#">This is post preview</a></h2>
-                    <i class="fa-regular fa-user"></i>&nbsp;&nbsp;Awa Melvin
-                   &nbsp;
-                   &nbsp;
-
-                    <i class="fa-regular fa-calendar-days"></i>&nbsp;&nbsp;20-03-2024
-                 
-                  <br />
-                    <br />
-
-                    <p class="preview-test">Lorem ipsum dolor sit amet, lectus, voluptatum magni quisquam placeat adipisci doloremque voluptatem numquam nulla nesciunt tempore autem. Eligendi porro fugiat mollitia voluptatibus? Beatae ab quidem non assumenda reiciendis quisquam quaerat.</p>
-                    <a href="login.aspx" class="btn btn-default read-more ">Read More</a>
-                </div>
-
-            </div>
-
-
-            <div class="post">
-                <img class="post-image" src="Images/pexels-moises-besada-7785028.jpg">
-                <div class="post-preview">
-
-                    <h2 class="post-title"><a href="#">This is post preview</a></h2>
-                    <i class="fa-regular fa-user"></i>&nbsp;&nbsp;Awa Melvin
-                   &nbsp;
-                   &nbsp;
-
-                    <i class="fa-regular fa-calendar-days"></i>&nbsp;&nbsp;20-03-2024
-                 
-                  <br />
-                    <br />
-
-                    <p class="preview-test">Lorem ipsum dolor sit amet, lectus, voluptatum magni quisquam placeat adipisci doloremque voluptatem numquam nulla nesciunt tempore autem. Eligendi porro fugiat mollitia voluptatibus? Beatae ab quidem non assumenda reiciendis quisquam quaerat.</p>
-                    <a href="login.aspx" class="btn btn-default read-more ">Read More</a>
-                </div>
-
-            </div>
-
-            <div class="post">
-                <img class="post-image" src="Images/pexels-moises-besada-7785028.jpg">
-                <div class="post-preview">
-
-                    <h2 class="post-title"><a href="#">This is post preview</a></h2>
-                    <i class="fa-regular fa-user"></i>&nbsp;&nbsp;Awa Melvin
-                   &nbsp;
-                   &nbsp;
-
-                    <i class="fa-regular fa-calendar-days"></i>&nbsp;&nbsp;20-03-2024
-                 
-                  <br />
-                    <br />
-
-                    <p class="preview-test">Lorem ipsum dolor sit amet, lectus, voluptatum magni quisquam placeat adipisci doloremque voluptatem numquam nulla nesciunt tempore autem. Eligendi porro fugiat mollitia voluptatibus? Beatae ab quidem non assumenda reiciendis quisquam quaerat.</p>
-                    <a href="login.aspx" class="btn btn-default read-more ">Read More</a>
-                </div>
-
-            </div>
-
-
-            <div class="post">
-                <img class="post-image" src="Images/pexels-moises-besada-7785028.jpg">
-                <div class="post-preview">
-
-                    <h2 class="post-title"><a href="#">This is post preview</a></h2>
-                    <i class="fa-regular fa-user"></i>&nbsp;&nbsp;Awa Melvin
-                   &nbsp;
-                   &nbsp;
-
-                    <i class="fa-regular fa-calendar-days"></i>&nbsp;&nbsp;20-03-2024
-                 
-                  <br />
-                    <br />
-
-                    <p class="preview-test">Lorem ipsum dolor sit amet, lectus, voluptatum magni quisquam placeat adipisci doloremque voluptatem numquam nulla nesciunt tempore autem. Eligendi porro fugiat mollitia voluptatibus? Beatae ab quidem non assumenda reiciendis quisquam quaerat.</p>
-                    <a href="login.aspx" class="btn btn-default read-more ">Read More</a>
-                </div>
-
-            </div>
-
-
-            <div class="post">
-                <img class="post-image" src="Images/pexels-moises-besada-7785028.jpg">
-                <div class="post-preview">
-
-                    <h2 class="post-title"><a href="#">This is post preview</a></h2>
-                    <i class="fa-regular fa-user"></i>&nbsp;&nbsp;Awa Melvin
-                   &nbsp;
-                   &nbsp;
-
-                    <i class="fa-regular fa-calendar-days"></i>&nbsp;&nbsp;20-03-2024
-                 
-                  <br />
-                    <br />
-
-                    <p class="preview-test">Lorem ipsum dolor sit amet, lectus, voluptatum magni quisquam placeat adipisci doloremque voluptatem numquam nulla nesciunt tempore autem. Eligendi porro fugiat mollitia voluptatibus? Beatae ab quidem non assumenda reiciendis quisquam quaerat.</p>
-                    <a href="login.aspx" class="btn btn-default read-more ">Read More</a>
-                </div>
-
-            </div>
-
-
-            <div class="post">
-                <img class="post-image" src="Images/pexels-moises-besada-7785028.jpg">
-                <div class="post-preview">
-
-                    <h2 class="post-title"><a href="#">This is post preview</a></h2>
-                    <i class="fa-regular fa-user"></i>&nbsp;&nbsp;Awa Melvin
-                   &nbsp;
-                   &nbsp;
-
-                    <i class="fa-regular fa-calendar-days"></i>&nbsp;&nbsp;20-03-2024
-                 
-                  <br />
-                    <br />
-
-                    <p class="preview-test">Lorem ipsum dolor sit amet, lectus, voluptatum magni quisquam placeat adipisci doloremque voluptatem numquam nulla nesciunt tempore autem. Eligendi porro fugiat mollitia voluptatibus? Beatae ab quidem non assumenda reiciendis quisquam quaerat.</p>
-                    <a href="login.aspx" class="btn btn-default read-more ">Read More</a>
-                </div>
-
-            </div>
-
-
+                </ItemTemplate>
+            </asp:DataList>
         </div>
         <%-- sidebar  --%>
         <div class="sidebar home">
@@ -315,26 +108,30 @@
 
             <div class="section topics">
                 <h2 class="section-title">Topics</h2>
-                <ul>
-                    <li><a href="#">Poems</a></li>
-                    <li><a href="#">Quotes</a></li>
-                    <li><a href="#">Fiction</a></li>
-                    <li><a href="#">Biography</a></li>
-                    <li><a href="#">Motivation</a></li>
-                    <li><a href="#">Inspiration</a></li>
-                    <li><a href="#">Life Lessson</a></li>
-                </ul>
+
+                <asp:DataList runat="server" ID="TopicDataList" CssClass="DataList">
+                    <ItemTemplate>
+
+                        <ul>
+                            <li>
+                                <asp:LinkButton runat="server" ID="SearchTopic" OnClick="SearchTopic_Click" CommandName="TopicId" CommandArgument='<%#Eval("Id")+";"+ Eval("Name") %>'><%# Eval("Name")%>' ></asp:LinkButton></li>
+
+                        </ul>
+
+
+                    </ItemTemplate>
+                </asp:DataList>
+
             </div>
 
         </div>
 
     </div>
 
- <%-- Slick caraousel --%>
-    <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+   
 
 </asp:Content>
 
- 
+
 
 

@@ -10,15 +10,24 @@
 namespace Blog {
     
     
-    public partial class ControlPanel {
+    public partial class PostDetail {
         
         /// <summary>
-        /// ManagePostDataList control.
+        /// PostTitle control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DataList ManagePostDataList;
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl PostTitle;
+        
+        /// <summary>
+        /// PostData control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl PostData;
     }
 }

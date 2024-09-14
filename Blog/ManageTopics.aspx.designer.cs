@@ -10,15 +10,15 @@
 namespace Blog {
     
     
-    public partial class ControlPanel {
+    public partial class ManageTopics {
         
         /// <summary>
-        /// ManagePostDataList control.
+        /// topicDataList control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DataList ManagePostDataList;
+        protected global::System.Web.UI.WebControls.DataList topicDataList;
     }
 }

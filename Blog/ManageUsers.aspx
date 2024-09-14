@@ -1,4 +1,4 @@
-﻿<%@ Page Title="Admin Section- Manage Post" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="ControlPanel.aspx.cs" Inherits="Blog.ControlPanel" %>
+﻿<%@ Page Title="Admin Section- Manage Users" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="ManageUsers.aspx.cs" Inherits="Blog.ManageUsers" %>
 
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
 
@@ -32,13 +32,13 @@
         <div class="admin-content">
 
             <div class="button-group">
-                <a href="CreatePost.aspx" class="btn btn-primary">Add Post</a>
+                <asp:Button runat="server" ID="AddUser" OnClick="AddUser_Click" CssClass="btn btn-primary" Text="Add User"/>
                 <%--<a href="ControlPanel.aspx" class="btn btn-primary">Manage Post</a>--%>
             </div>
 
             <div class="content">
 
-                <h3 class="page-title">Manage Posts</h3>
+                <h3 class="page-title">Manage Users</h3>
 
                 <table>
 
@@ -51,19 +51,7 @@
 
                     <tbody>
 
-                        <asp:DataList runat="server" ID="ManagePostDataList">
-                            <ItemTemplate>
-                                <tr>
-                                    <td><asp:Label ID="lblRowNumber" Text='<%# Container.ItemIndex + 1 %>' runat="server" /></td>
-                                    <td><%# Eval("Title") %></td>
-                                    <td><%# Eval("Name") %></td>
-                                    <td class="edit"><a href="#">Edit</a></td>
-                                    <td class="delete"><a href="#">Delete</a></td>
-                                    <td class="publish"><a href="#">Publish</a></td>
-                                </tr>
-                            </ItemTemplate>
-
-                        </asp:DataList>
+                   
 
 
 
