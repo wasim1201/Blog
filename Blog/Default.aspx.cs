@@ -18,7 +18,6 @@ namespace Blog
 
             if (!IsPostBack)
             {
-               
 
                 using (SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["BLOGDB"].ConnectionString))
                 {
@@ -89,16 +88,19 @@ namespace Blog
                 {
                     postDataList.DataSource = cmd.ExecuteReader();
                     postDataList.DataBind();
-                   
+                    
                 }
 
 
             }
-            ScriptManager.RegisterClientScriptBlock(this, GetType(), "mykey", "MoveToRecent();", true);
+
+
         }
 
         protected void SearchTopic_Click(object sender, EventArgs e)
         {
+            
+
             LinkButton btn = (LinkButton)sender;
             switch (btn.CommandName)
             {
@@ -109,12 +111,19 @@ namespace Blog
 
                     RecentPost.InnerText = "Search results for topic " + Topic.ToUpper() + " posts only";
                     PopulatePost(Id);
+                    ScriptManager.RegisterClientScriptBlock(this, GetType(), "mykey", "MoveToRecent();", true);
+
 
                     break;
 
             }
 
+        
         }
+
+    
+
+
     }
 
 }

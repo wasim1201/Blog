@@ -5,15 +5,13 @@
     <link rel="stylesheet" type="text/css" href="Site.css" />
     <link rel="stylesheet" type="text/css" href="Site.css" />
 
- 
-
-
+    
 
     <div class="page-wrapper home">
 
         <!-- Post Slider -->
 
-        <div class="post-slider">
+        <div runat="server" id="TrendsDiv"  class="post-slider">
 
             <%-- <div class="prev">Prev</div>
             <div class="next">Next</div>--%>
@@ -26,7 +24,7 @@
             </span>--%>
 
 
-            <h1 class="slider-title">Trending posts</h1>
+            <h1 id="Trends" runat="server" class="slider-title">Trending posts</h1>
 
             <div class="post-wrapper">
 
@@ -114,7 +112,7 @@
 
                         <ul>
                             <li>
-                                <asp:LinkButton runat="server" ID="SearchTopic" OnClick="SearchTopic_Click" CommandName="TopicId" CommandArgument='<%#Eval("Id")+";"+ Eval("Name") %>'><%# Eval("Name")%>' ></asp:LinkButton></li>
+                                <asp:LinkButton runat="server" ID="SearchTopic" OnClick="SearchTopic_Click" CommandName="TopicId" CommandArgument='<%#Eval("Id")+";"+ Eval("Name") %>'><%# Eval("Name")%></asp:LinkButton></li>
 
                         </ul>
 

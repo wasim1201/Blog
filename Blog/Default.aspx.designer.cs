@@ -13,6 +13,24 @@ namespace Blog {
     public partial class _Default {
         
         /// <summary>
+        /// TrendsDiv control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl TrendsDiv;
+        
+        /// <summary>
+        /// Trends control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl Trends;
+        
+        /// <summary>
         /// TrendsDataList control.
         /// </summary>
         /// <remarks>
