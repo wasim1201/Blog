@@ -42,10 +42,11 @@ namespace Blog
                 string FromPostPage = Request.QueryString["FromPostPage"];
                 if (FromPostPage!=null && FromPostPage.Equals("Yes")){
                     int TopicId = Convert.ToInt32(Request.QueryString["Id"]);
-                    string TopicName =Request.QueryString["Name"];
+                    string TopicName =Request.QueryString["TopicName"];
                     PopulatePost(TopicId);
                    //Todo
-                   // RecentPost.InnerText = "Search results for topic '" + TopicName.ToLower() + "' posts only";
+                   
+                    RecentPost.InnerText = "Search results for topic '" + TopicName.ToLower() + "' posts only";
                     ScriptManager.RegisterClientScriptBlock(this, GetType(), "mykey2", "MoveToRecent();", true);
 
 
@@ -105,10 +106,21 @@ namespace Blog
                 if (postDataList != null)
                 {
                     LabelPost.Text = "";
-                    postDataList.DataSource = cmd.ExecuteReader();
-                    postDataList.DataBind();
+                    SqlDataReader reader = cmd.ExecuteReader();
+                    if (reader.HasRows)
+                    {
+                        postDataList.DataSource = reader;
+                        postDataList.DataBind();
+
+                    }
+                    else
+                    {
+                        LabelPost.Text = "No posts found";
+                        postDataList.DataBind();
+                    }
 
                 }
+              
 
 
             }
@@ -146,8 +158,17 @@ namespace Blog
         {
 
             string text = Search.Text.Trim();
-            FilterPosts(text);
-            RecentPost.InnerText = "Search results for topic '" + text.ToLower() + "' posts only";
+            if (text != "")
+            {
+                FilterPosts(text);
+                RecentPost.InnerText = "Search results for topic '" + text.ToLower() + "' posts only";
+            }
+            else
+            {
+              //  ScriptManager.RegisterClientScriptBlock(this, GetType(), "mykey3", "MoveToRecent();", true);
+
+            }
+
         }
 
         private void FilterPosts(string text)

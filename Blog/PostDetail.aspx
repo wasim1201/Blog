@@ -54,7 +54,7 @@
                         <ItemTemplate>
                             <div  id="PostDetailTopicDiv">
                                 <li>
-                                <asp:HyperLink runat="server" CssClass="PostDetailTopicLink" NavigateUrl='<%# "Default.aspx?Id="+Eval("Id")+"&FromPostPage=Yes&Topic="+Eval("Name") %>' ID="TopicsItem"><%# Eval("Name") %></asp:HyperLink>
+                                <asp:HyperLink runat="server" CssClass="PostDetailTopicLink" NavigateUrl='<%# "Default.aspx?Id="+Eval("Id")+"&FromPostPage=Yes&TopicName="+Eval("Name") %>' ID="TopicsItem"><%# Eval("Name") %></asp:HyperLink>
                             </li>
                             </div>
                             
