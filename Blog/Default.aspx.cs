@@ -6,6 +6,7 @@ using System.Data.SqlClient;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
+using System.Web.UI.HtmlControls;
 using System.Web.UI.WebControls;
 
 namespace Blog
@@ -117,7 +118,7 @@ namespace Blog
 
         protected void SearchTopic_Click(object sender, EventArgs e)
         {
-
+            //FocusTopic();
 
             LinkButton btn = (LinkButton)sender;
             switch (btn.CommandName)
@@ -138,6 +139,8 @@ namespace Blog
 
 
         }
+
+        
 
         protected void Search_TextChanged(object sender, EventArgs e)
         {

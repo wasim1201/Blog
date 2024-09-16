@@ -113,16 +113,17 @@
                 <asp:DataList runat="server" ID="TopicDataList" CssClass="DataList">
                     <ItemTemplate>
 
-                        <ul>
-                            <li>
-                                <asp:LinkButton runat="server" ID="SearchTopic"
-                                    OnClick="SearchTopic_Click" CommandName="TopicId"
-                                    CommandArgument='<%#Eval("Id")+";"+ Eval("Name") %>'><%# Eval("Name")%></asp:LinkButton>
+                        <ul id="HomePostTopic">
 
-                            </li>
+                            <div id="HomeTopicDiv">
+                                <li>
+                                    <asp:LinkButton runat="server" CssClass="HomePostTopicLink" ID="SearchTopic"
+                                        OnClick="SearchTopic_Click" CommandName="TopicId"
+                                        CommandArgument='<%#Eval("Id")+";"+ Eval("Name") %>'><%# Eval("Name")%></asp:LinkButton>
+                                </li>
+                            </div>
 
                         </ul>
-
 
                     </ItemTemplate>
                 </asp:DataList>

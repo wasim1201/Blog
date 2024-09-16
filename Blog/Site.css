@@ -217,36 +217,6 @@ a {
 }
 
 
-.content .sidebar .section.topics .DataList ul {
-    margin: 0;
-    padding: 0px;
-    list-style: none;
-}
-
-
-
-
-
-
-.content .sidebar .section.topics ul li a:hover {
-    padding-left: 20px;
-    transition: all 0.3s;
-    color: blue;
-}
-
-
-
-.content .sidebar .section.topics .DataList ul li a {
-    border-bottom: 1px solid gray;
-    display: block;
-    /*padding: 15px 0px;*/
-    font-family: serif;
-    font-size: 1.2em;
-    text-decoration: none;
-    transition: all 0.5s;
-    width: 300px;
-}
-
 /* END OF CONTENT*/
 
 .text-input {
@@ -400,17 +370,67 @@ a {
 }
 
 .sidebar.single .popular .post {
-    border-top: 1px solid gray;
     margin-top: 10px;
-    padding-top: 10px;
+    background-color: aliceblue
 }
 
-    .sidebar.single .popular .post img {
-        width: 50px;
-        height: 50px;
-        float: left;
-        margin-right: 10px;
+    .sidebar.single .popular .post .popular-link {
+        overflow: hidden;
+        text-overflow: ellipsis;
+        display: -webkit-box;
+        -webkit-line-clamp: 2; /* number of lines to show */
+        /*line-clamp: 2;*/
+        -webkit-box-orient: vertical;   
+      
     }
+
+#PostTopic {
+    list-style: none;
+}
+#HomePostTopic{
+    list-style: none;
+}
+
+#PostDetailTopicDiv{
+    width:220px;
+    text-decoration:none;
+}
+
+#PostDetailTopicDiv:hover {
+    background-color: aliceblue
+}
+
+#HomeTopicDiv {
+    width: 220px;
+    text-decoration: none;
+    padding:10px;
+}
+
+#HomeTopicDiv:hover {
+    background-color: aliceblue
+}
+
+   
+
+.PostDetailTopicLink {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2; /* number of lines to show */
+    /*line-clamp: 2;*/
+    -webkit-box-orient: vertical;
+    padding: 10px;
+    list-style: none;
+}
+
+
+
+.sidebar.single .popular .post img {
+    width: 50px;
+    height: 50px;
+    float: left;
+    margin-right: 10px;
+}
 
 .navbar #login-menu {
     display: inherit;

@@ -34,7 +34,7 @@
                     <ItemTemplate>
                         <div class="post clearfix">
                             <img src='<%# "data:image/jpg;base64," + Convert.ToBase64String((byte[])Eval("ImageData")) %>' alt="">
-                            <asp:LinkButton runat="server" ID="PoplularPost"
+                            <asp:LinkButton runat="server" ID="PoplularPost" CssClass="popular-link"
                                 OnClick="PoplularPostDetail_Click" CommandName="PoplularPostDetail"
                                 CommandArgument='<%#Eval("Id")+";"+Eval("Title") %>'> <%#Eval("Title") %></asp:LinkButton>
                         </div>
@@ -52,9 +52,12 @@
 
                     <asp:DataList ID="PostTopicsDataList" runat="server">
                         <ItemTemplate>
-                            <li>
-                                <asp:HyperLink runat="server" NavigateUrl='<%# "Default.aspx?Id="+Eval("Id")+"&FromPostPage=Yes&Topic="+Eval("Name") %>' ID="TopicsItem"><%# Eval("Name") %></asp:HyperLink>
+                            <div  id="PostDetailTopicDiv">
+                                <li>
+                                <asp:HyperLink runat="server" CssClass="PostDetailTopicLink" NavigateUrl='<%# "Default.aspx?Id="+Eval("Id")+"&FromPostPage=Yes&Topic="+Eval("Name") %>' ID="TopicsItem"><%# Eval("Name") %></asp:HyperLink>
                             </li>
+                            </div>
+                            
                         </ItemTemplate>
 
 

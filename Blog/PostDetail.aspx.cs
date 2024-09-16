@@ -22,9 +22,8 @@ namespace Blog
                 LoadPosts();
                 LoadTopics();
             }
-
-
-
+            
+            
 
         }
 
