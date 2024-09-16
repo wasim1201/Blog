@@ -1,6 +1,6 @@
-﻿<%@ Page Title="Post Deatail Page" Language="C#" MasterPageFile="~/Site.Master"  AutoEventWireup="true" CodeBehind="PostDetail.aspx.cs" Inherits="Blog.PostDetail" %>
+﻿<%@ Page Title="Post Deatail Page" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="PostDetail.aspx.cs" Inherits="Blog.PostDetail" %>
 
-<asp:content id="DefaultContent" contentplaceholderid="MainContent" runat="server">
+<asp:Content ID="DefaultContent" ContentPlaceHolderID="MainContent" runat="server">
 
     <link rel="stylesheet" type="text/css" href="Site.css" />
 
@@ -9,15 +9,15 @@
     <div class="content clearfix">
 
         <%-- main content --%>
-        <div style="min-height:800px; padding-bottom:20px;"  class="main-content single-post">
+        <div style="min-height: 800px; padding-bottom: 20px;" class="main-content single-post">
             <h1 id="PostTitle" runat="server" class="post-title"></h1>
 
             <br />
             <br />
-      
+
 
             <div class="post-content">
-              <p id="PostData" runat="server"/>
+                <p id="PostData" runat="server" />
 
             </div>
         </div>
@@ -27,53 +27,39 @@
             <!-- Section -->
             <div class="section popular">
 
-                <h2 class="section-title">Popular</h2>
+                <h2 class="section-title">Popular Posts</h2>
 
-                <div class="post clearfix">
-                    <img src="images/pexels-moises-besada-7785028.jpg" alt="">
-                    <a href="#" class="title">How to overcome your fears dont tell to books</a>
-                </div>
+                <asp:DataList runat="server" ID="PostSuggestionDataList">
 
-                <div class="post clearfix">
-                    <img src="images/pexels-moises-besada-7785028.jpg" alt="">
-                    <a href="" class="title">How to overcome your fears dont tell to books</a>
-                </div>
+                    <ItemTemplate>
+                        <div class="post clearfix">
+                            <img src='<%# "data:image/jpg;base64," + Convert.ToBase64String((byte[])Eval("ImageData")) %>' alt="">
+                            <asp:LinkButton runat="server" ID="PoplularPost"
+                                OnClick="PoplularPostDetail_Click" CommandName="PoplularPostDetail"
+                                CommandArgument='<%#Eval("Id")+";"+Eval("Title") %>'> <%#Eval("Title") %></asp:LinkButton>
+                        </div>
+                    </ItemTemplate>
 
-
-                <div class="post clearfix">
-                    <img src="images/pexels-moises-besada-7785028.jpg" alt="">
-                    <a href="" class="title">How to overcome your fears dont tell to books</a>
-                </div>
+                </asp:DataList>
 
 
-                <div class="post clearfix">
-                    <img src="images/pexels-moises-besada-7785028.jpg" alt="">
-                    <a href="" class="title">How to overcome your fears dont tell to books</a>
-                </div>
-
-                <div class="post clearfix">
-                    <img src="images/pexels-moises-besada-7785028.jpg" alt="">
-                    <a href="" class="title">How to overcome your fears dont tell to books</a>
-                </div>
-
-
-                <div class="post clearfix">
-                    <img src="images/pexels-moises-besada-7785028.jpg" alt="">
-                    <a href="" class="title">How to overcome your fears dont tell to books</a>
-                </div>
 
             </div>
 
             <div class="section topics">
                 <h2 class="section-title">Topics</h2>
-                <ul>
-                    <li><a href="#">Poems</a></li>
-                    <li><a href="#">Quotes</a></li>
-                    <li><a href="#">Fiction</a></li>
-                    <li><a href="#">Biography</a></li>
-                    <li><a href="#">Motivation</a></li>
-                    <li><a href="#">Inspiration</a></li>
-                    <li><a href="#">Life Lessson</a></li>
+                <ul id="PostTopic">
+
+                    <asp:DataList ID="PostTopicsDataList" runat="server">
+                        <ItemTemplate>
+                            <li>
+                                <asp:HyperLink runat="server" NavigateUrl='<%# "Default.aspx?Id="+Eval("Id")+"&FromPostPage=Yes&Topic="+Eval("Name") %>' ID="TopicsItem"><%# Eval("Name") %></asp:HyperLink>
+                            </li>
+                        </ItemTemplate>
+
+
+                    </asp:DataList>
+
                 </ul>
             </div>
 
@@ -82,7 +68,7 @@
     </div>
 
 
-</asp:content>
+</asp:Content>
 
 
 

@@ -5,13 +5,13 @@
     <link rel="stylesheet" type="text/css" href="Site.css" />
     <link rel="stylesheet" type="text/css" href="Site.css" />
 
-    
+
 
     <div class="page-wrapper home">
 
         <!-- Post Slider -->
 
-        <div runat="server" id="TrendsDiv"  class="post-slider">
+        <div runat="server" id="TrendsDiv" class="post-slider">
 
             <%-- <div class="prev">Prev</div>
             <div class="next">Next</div>--%>
@@ -60,6 +60,7 @@
         <%-- main content --%>
         <div class="main-content">
             <h1 runat="server" id="RecentPost" class="recent-post-title">Recent Posts</h1>
+            <asp:Label runat="server" ID="LabelPost" Style="color: red; padding-left: 10px;"></asp:Label>
 
             <asp:DataList runat="server" ID="postDataList" CssClass="postDataList">
                 <ItemTemplate>
@@ -93,6 +94,8 @@
 
                 </ItemTemplate>
             </asp:DataList>
+
+
         </div>
         <%-- sidebar  --%>
         <div class="sidebar home">
@@ -100,11 +103,11 @@
             <!-- Section -->
             <div class="section search">
 
-                <h2 class="section-title">Search</h2>
-                <input type="text" name="search-term" class="text-input" placeholder="serach...">
+                <h2 id="SearchSection" class="section-title">Search</h2>
+                <asp:TextBox runat="server" ID="Search" OnTextChanged="Search_TextChanged" CssClass="text-input" placeholder="Serach posts..." />
             </div>
 
-            <div class="section topics">
+            <div id="HomeTopics" class="section topics">
                 <h2 class="section-title">Topics</h2>
 
                 <asp:DataList runat="server" ID="TopicDataList" CssClass="DataList">
@@ -112,7 +115,11 @@
 
                         <ul>
                             <li>
-                                <asp:LinkButton runat="server" ID="SearchTopic" OnClick="SearchTopic_Click" CommandName="TopicId" CommandArgument='<%#Eval("Id")+";"+ Eval("Name") %>'><%# Eval("Name")%></asp:LinkButton></li>
+                                <asp:LinkButton runat="server" ID="SearchTopic"
+                                    OnClick="SearchTopic_Click" CommandName="TopicId"
+                                    CommandArgument='<%#Eval("Id")+";"+ Eval("Name") %>'><%# Eval("Name")%></asp:LinkButton>
+
+                            </li>
 
                         </ul>
 
@@ -126,7 +133,7 @@
 
     </div>
 
-   
+
 
 </asp:Content>
 

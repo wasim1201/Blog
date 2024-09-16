@@ -49,6 +49,15 @@ namespace Blog {
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl RecentPost;
         
         /// <summary>
+        /// LabelPost control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label LabelPost;
+        
+        /// <summary>
         /// postDataList control.
         /// </summary>
         /// <remarks>
@@ -56,6 +65,15 @@ namespace Blog {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.DataList postDataList;
+        
+        /// <summary>
+        /// Search control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox Search;
         
         /// <summary>
         /// TopicDataList control.
