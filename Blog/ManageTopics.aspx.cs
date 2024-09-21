@@ -26,7 +26,7 @@ namespace Blog
                     if(topicDataList != null)
                     {
                         topicDataList.DataSource = cmd.ExecuteReader();
-                        topicDataList.DataBind();
+                        //topicDataList.DataBind();
 
                     }
 

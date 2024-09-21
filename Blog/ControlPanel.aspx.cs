@@ -25,7 +25,7 @@ namespace Blog
                     if (ManagePostDataList != null)
                     {
                         ManagePostDataList.DataSource = cmd.ExecuteReader();
-                        ManagePostDataList.DataBind();
+                        ///ManagePostDataList.DataBind();
 
                     }
 

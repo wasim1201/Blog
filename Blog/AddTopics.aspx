@@ -26,7 +26,7 @@
             <ul>
                 <li><a href="ControlPanel">Manage Posts</a></li>
                 <li><a href="ManageUsers">Manage Users</a></li>
-                <li><a href="Topics">Manage Topics</a></li>
+                <li><a href="ManageTopics">Manage Topics</a></li>
             </ul>
 
         </div>
