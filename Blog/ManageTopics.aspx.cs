@@ -10,7 +10,7 @@ using System.Web.UI.WebControls;
 
 namespace Blog
 {
-    public partial class ControlPanel : System.Web.UI.Page
+    public partial class ManageTopics : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -18,23 +18,25 @@ namespace Blog
             {
                 using (SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["BLOGDB"].ConnectionString))
                 {
-                    SqlCommand cmd = new SqlCommand("spGetManagePostList", con);
+                    SqlCommand cmd = new SqlCommand("spGetManageTopicList", con);
                     cmd.CommandType = CommandType.StoredProcedure;
                     con.Open();
 
-                    if (ManagePostDataList != null)
+
+                    if(topicDataList != null)
                     {
-                        ManagePostDataList.DataSource = cmd.ExecuteReader();
-                        ///ManagePostDataList.DataBind();
+                        topicDataList.DataSource = cmd.ExecuteReader();
+                        //topicDataList.DataBind();
 
                     }
 
+
+
+
                 }
 
-                
+
             }
         }
-
-     
     }
 }

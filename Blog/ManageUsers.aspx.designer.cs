@@ -10,16 +10,25 @@
 namespace Blog {
     
     
-    public partial class ControlPanel {
+    public partial class ManageUsers {
         
         /// <summary>
-        /// SqlDataSource1 control.
+        /// AddUser control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.SqlDataSource SqlDataSource1;
+        protected global::System.Web.UI.WebControls.Button AddUser;
+        
+        /// <summary>
+        /// SqlDataSourceUsers control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.SqlDataSource SqlDataSourceUsers;
         
         /// <summary>
         /// GridView1 control.
@@ -29,14 +38,5 @@ namespace Blog {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.GridView GridView1;
-        
-        /// <summary>
-        /// ManagePostDataList control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.DataList ManagePostDataList;
     }
 }

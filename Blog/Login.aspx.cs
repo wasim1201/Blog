@@ -24,7 +24,7 @@ namespace Blog
                 string Username = txtUsername.Text;
                 string Password = txtPassword.Text;
                 con.Open();
-                string query = "Select Username from tblUser where Username='"+@Username+"' and Password='"+@Password+"'";
+                string query = "Select Username , Id from tblUser where Username='"+@Username+"' and Password='"+@Password+"'";
                 SqlCommand cmd = new SqlCommand(query, con);
                 
                 SqlDataReader sdr= cmd.ExecuteReader();
@@ -34,7 +34,8 @@ namespace Blog
                 {
                     txtLabel.ForeColor=System.Drawing.Color.Green;
                     txtLabel.Text = "Login success!";
-                    Session["username"] = Username;
+                    Session["username"] = Username.ToLower();
+                    Session["userId"] = sdr["Id"];
                     Response.Redirect("Default.aspx");
                 }
                 else

@@ -12,11 +12,16 @@
         <%: Scripts.Render("~/bundles/modernizr") %>
     </asp:PlaceHolder>
 
+    <script src="Scripts/bootstrap.js"></script>
+    <script src="Scripts/jquery-3.3.1.js"></script>
+    <script src="Scripts/Site.js"></script>
+
+
     <webopt:BundleReference runat="server" Path="~/Content/css" />
     <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
 
     <link rel="stylesheet" type="text/css" href="Site.css" />
-
+    <script src="Scripts/jquery-3.3.1.js"></script>
 
     <%-- GOOGLE FOTNS LINK --%>
     <%--  <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -80,24 +85,24 @@
                         <ul class="nav navbar-nav navbar-right">
 
 
-                             
+
                             <li class="dropdown" id="WelcomeUser" runat="server">
-                              
+
                                 <a id="logged-user" href="#" class="dropdown-toggle" data-toggle="dropdown" role="button"
                                     aria-haspopup="true" aria-expanded="false">Welcome  <%=HttpContext.Current.Session["username"]%><span class="caret"></span></a>
-                                
+
                                 <ul class="dropdown-menu">
                                     <li><a href="ControlPanel">Dashboard</a></li>
                                     <%--<li role="separator" class="divider"></li>--%>
                                     <li>
                                         <asp:LinkButton runat="server" OnClick="Logout_Click">Logout</asp:LinkButton></li>
                                 </ul>
-                              
+
                             </li>
-                            
 
 
-                            
+
+
 
                             <ul id="LoginRegister" runat="server" class="nav navbar-nav navbar-right login-register">
                                 <li><a runat="server" href="~/Login">Login</a></li>
@@ -105,7 +110,7 @@
 
                             </ul>
 
-                          
+
 
 
 
@@ -210,6 +215,6 @@
         Please open in Desktop or Laptop
     </div>
 
-
+  
 </body>
 </html>
